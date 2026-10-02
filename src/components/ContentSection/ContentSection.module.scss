@@ -1,0 +1,17 @@
+@use "../../styles/mixins" as m;
+
+.content-section {
+  margin-bottom: var(--space-xl);
+  font-size: var(--fs-md);
+}
+
+.content-section__title {
+  margin-bottom: var(--space-l);
+  @include m.text-gradient-color;
+  font-size: var(--fs-xl);
+}
+
+.content-section__description {
+  margin-bottom: var(--space-xl);
+  text-align: center;
+}

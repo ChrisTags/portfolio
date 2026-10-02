@@ -1,0 +1,6 @@
+@use "../../styles/mixins" as m;
+
+.buttonLink {
+  @include m.button-link;
+  text-align: center;
+}

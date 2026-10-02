@@ -1,0 +1,70 @@
+@use "variables" as vars;
+
+@mixin sticky-top($height: auto) {
+  position: sticky;
+  top: 0;
+  height: $height;
+}
+
+@mixin text-gradient-color() {
+  background: linear-gradient(
+    135deg,
+    var(--clr-brand-primary),
+    var(--clr-brand-secondary)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+@mixin flex-center-y {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-center-x {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-center-all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-group($gap: var(--space-m), $justify: center) {
+  @include flex-center-y;
+  flex-wrap: wrap;
+  justify-content: $justify;
+  gap: $gap;
+}
+
+@mixin button-link {
+  @include flex-center-all;
+
+  min-width: min(var(--button-min-width), 100%);
+  max-width: 100%;
+  padding: var(--space-m);
+  border: 0.3rem solid var(--clr-border);
+  color: var(--clr-text-main);
+  font-size: var(--fs-md);
+  overflow-wrap: anywhere;
+
+  @include transition-base;
+
+  &:hover {
+    background-color: var(--clr-bg-button);
+  }
+}
+
+@mixin transition-base($prop: all) {
+  transition: $prop vars.$transition-default;
+}
+
+@mixin tablet-up {
+  @media (min-width: #{vars.$bp-tablet}) {
+    @content;
+  }
+}

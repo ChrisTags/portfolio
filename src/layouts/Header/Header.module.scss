@@ -1,0 +1,22 @@
+@use "../../styles/mixins" as m;
+
+.mainHeader {
+  position: fixed;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 100;
+  background-color: var(--clr-bg-header);
+  @include m.transition-base(transform);
+
+  &[data-visible="false"] {
+    transform: translateY(100%);
+  }
+
+  @include m.tablet-up {
+    position: static;
+    bottom: auto;
+    padding-bottom: var(--space-xl);
+    transform: none;
+    background: inherit;
+  }
+}

@@ -1,0 +1,21 @@
+@use "../../styles/mixins" as m;
+
+.page-header {
+  margin-bottom: var(--space-xl);
+}
+
+.page-header__title {
+  margin-bottom: var(--space-l);
+  font-size: var(--fs-xl);
+  @include m.text-gradient-color;
+}
+
+.page-header__description {
+  margin-bottom: var(--space-xl);
+  width: min(100%, 50rem);
+  margin-inline: auto;
+
+  p + p {
+    margin-top: var(--space-m);
+  }
+}

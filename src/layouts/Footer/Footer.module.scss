@@ -1,0 +1,21 @@
+@use "../../styles/mixins" as m;
+
+.mainFooter {
+  padding-bottom: var(--space-m);
+  border-top: 1px solid var(--clr-border);
+}
+
+.mainFooter__contact {
+  margin-bottom: var(--space-m);
+  padding-block: var(--space-xl);
+}
+
+.mainFooter__contact-list {
+  @include m.flex-center-x;
+  flex-wrap: wrap;
+  gap: var(--space-l);
+}
+.mainFooter__author {
+  text-align: center;
+  padding-block: var(--space-m);
+}

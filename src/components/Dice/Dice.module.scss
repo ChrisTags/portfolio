@@ -1,0 +1,80 @@
+@use "../../styles/mixins" as m;
+
+.scene {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+  perspective: 1800px;
+}
+
+.dice {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-style: preserve-3d;
+  --dice-size: clamp(7.5rem, 30vw, 14rem);
+  --half-size: calc(var(--dice-size) / 2);
+  width: var(--dice-size);
+  height: var(--dice-size);
+  margin-top: calc(var(--dice-size) / -2);
+  margin-left: calc(var(--dice-size) * -1);
+  animation: spin 12s infinite linear;
+}
+
+.diceAlternative {
+  animation: spinReverse 8s infinite linear;
+}
+
+.face {
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--clr-border);
+  border-radius: 0.5rem;
+}
+
+@include m.tablet-up {
+  .dice {
+    --dice-size: clamp(7.5rem, 30vw, 20rem);
+  }
+}
+
+.front {
+  transform: translateZ(var(--half-size));
+}
+.back {
+  transform: rotateY(180deg) translateZ(var(--half-size));
+}
+.right {
+  transform: rotateY(90deg) translateZ(var(--half-size));
+}
+.left {
+  transform: rotateY(270deg) translateZ(var(--half-size));
+}
+.top {
+  transform: rotateX(90deg) translateZ(var(--half-size));
+}
+.bottom {
+  transform: rotateX(270deg) translateZ(var(--half-size));
+}
+
+@keyframes spin {
+  from {
+    transform: rotateY(0deg) rotateX(-20deg);
+  }
+  to {
+    transform: rotateY(360deg) rotateX(-20deg);
+  }
+}
+
+@keyframes spinReverse {
+  from {
+    transform: rotateY(0deg) rotateX(20deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateY(-360deg) rotateX(20deg) rotateZ(-360deg);
+  }
+}

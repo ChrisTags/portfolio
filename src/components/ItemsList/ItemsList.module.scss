@@ -1,0 +1,7 @@
+@use "../../styles/mixins" as m;
+
+.items-list {
+  @include m.flex-group(var(--space-m));
+  align-items: stretch;
+  width: 100%;
+}

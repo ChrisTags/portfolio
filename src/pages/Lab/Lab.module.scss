@@ -1,0 +1,9 @@
+.labItemsList {
+  justify-content: center;
+  gap: var(--space-xl);
+}
+
+.labItemsList > * {
+  flex: 0 1 18rem;
+  max-width: 18rem;
+}

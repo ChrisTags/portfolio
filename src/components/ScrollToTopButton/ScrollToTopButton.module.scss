@@ -1,0 +1,29 @@
+@use "../../styles/mixins" as m;
+
+.scrollTopButton {
+  position: fixed;
+  right: var(--space-m);
+  bottom: calc(var(--space-m) + 3rem);
+  z-index: 120;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 0.15rem solid var(--clr-border);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--clr-bg-main) 82%, var(--clr-brand-primary));
+  color: var(--clr-text-main);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  @include m.transition-base(transform);
+
+  &:hover {
+    transform: translateY(-0.1rem);
+  }
+
+  @include m.tablet-up {
+    right: var(--space-l);
+    bottom: var(--space-l);
+  }
+}

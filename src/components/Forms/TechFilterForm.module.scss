@@ -1,0 +1,20 @@
+@use "../../styles/mixins" as m;
+
+.form-filter {
+  @include m.sticky-top(auto);
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  width: calc(100% + 2rem);
+  min-height: 4.5rem;
+  margin-inline: calc(var(--space-m) * -1);
+  margin-bottom: var(--space-xl);
+  background-color: var(--clr-bg-main);
+  border-bottom: 1px solid var(--clr-border);
+
+  @include m.tablet-up {
+    position: static;
+  }
+}

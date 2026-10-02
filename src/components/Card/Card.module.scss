@@ -1,0 +1,83 @@
+@use "../../styles/mixins" as m;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color-scheme: dark;
+  overflow: hidden;
+  max-width: 100%;
+  outline: 1px solid var(--clr-border);
+  border-radius: 1rem;
+  padding-inline: var(--space-s);
+  padding-bottom: var(--space-m);
+  background-color: var(--clr-bg-card);
+  color: var(--clr-text-main);
+}
+
+.card__content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  img {
+    max-width: none;
+    width: calc(100% + 1rem);
+    margin-left: calc(var(--space-s) * -1);
+    margin-bottom: var(--space-xs);
+  }
+}
+
+.card__header {
+  margin-bottom: var(--space-xs);
+}
+
+.card__title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  min-height: calc(1.4em * 2);
+  text-align: start;
+  font-size: var(--fs-lg);
+  line-height: 1.4;
+}
+
+.card__description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  min-height: calc(1.5em * 3);
+  margin-bottom: var(--space-m);
+  line-height: 1.5;
+}
+
+.card__footer {
+  margin-bottom: var(--space-m);
+  padding-inline: var(--space-s);
+}
+
+.card__icons {
+  @include m.flex-center-all;
+  flex-wrap: wrap;
+  gap: var(--space-m);
+
+  img {
+    width: 1.3rem;
+  }
+}
+
+.card__actions {
+  @include m.flex-center-all;
+  flex-wrap: nowrap;
+  gap: var(--space-m);
+}
+
+@media (max-width: 26.25rem) {
+  .card__actions {
+    flex-wrap: wrap;
+  }
+}

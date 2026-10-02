@@ -1,0 +1,39 @@
+@use "../../styles/mixins" as m;
+
+.layout {
+  @include m.tablet-up {
+    min-height: 100svh;
+    display: grid;
+    grid-template-areas:
+      "headerArea"
+      "mainArea"
+      "footerArea";
+    grid-template-rows: auto 1fr auto;
+  }
+}
+
+.headerArea {
+  @include m.tablet-up {
+    grid-area: headerArea;
+    @include m.sticky-top(auto);
+    z-index: 10;
+    background: linear-gradient(to bottom, var(--clr-bg-main) 80%, transparent);
+  }
+}
+
+.mainArea {
+  @include m.tablet-up {
+    grid-area: mainArea;
+  }
+}
+
+.footerArea {
+  @include m.tablet-up {
+    grid-area: footerArea;
+  }
+}
+
+.mainContent {
+  width: 100%;
+  padding-block: var(--space-xl);
+}

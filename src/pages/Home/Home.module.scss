@@ -1,0 +1,80 @@
+@use "../../styles/mixins" as m;
+
+.hero {
+  margin-bottom: var(--space-xl);
+  padding-inline: var(--space-s);
+}
+
+.hero__header {
+  position: relative;
+  @include m.flex-center-y;
+  min-height: 10rem;
+}
+
+.hero__title {
+  position: relative;
+  z-index: 2;
+  @include m.text-gradient-color;
+  font-size: var(--fs-hero);
+  text-transform: uppercase;
+}
+
+.hero__description {
+  margin-block: var(--space-xl);
+  text-align: start;
+  text-wrap: pretty;
+}
+
+.hero__actions {
+  @include m.flex-group(var(--space-l));
+}
+
+.hero__link {
+  @include m.button-link;
+  border-color: var(--clr-brand-primary);
+
+  &:hover {
+    border-color: var(--clr-brand-secondary);
+    background-color: var(--clr-brand-secondary);
+  }
+}
+
+.technology-list__item {
+  @include m.flex-center-all;
+  width: 4.5rem;
+  height: 4.5rem;
+}
+
+.technology-list__icon {
+  width: 3rem;
+  height: 3rem;
+  object-fit: contain;
+  @include m.transition-base(transform);
+  filter: drop-shadow(
+    0 0 0.25rem color-mix(in srgb, var(--clr-bg-alt), transparent 50%)
+  );
+
+  &:hover {
+    transform: scale(1.15);
+  }
+}
+
+@include m.tablet-up {
+  .hero__actions {
+    @include m.flex-group(var(--space-xxl));
+  }
+  .dice {
+    position: relative;
+    flex: 1 1 0;
+    align-self: stretch;
+    min-width: 0;
+    margin-right: 6.5rem;
+  }
+  .section-technology {
+    width: min(100%, 50rem);
+    margin-inline: auto;
+  }
+  .hero__description {
+    max-width: 60%;
+  }
+}

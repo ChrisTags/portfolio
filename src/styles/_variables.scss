@@ -1,0 +1,37 @@
+:root {
+  --clr-bg-main: light-dark(oklch(99% 0.005 260), oklch(18% 0.01 260));
+  --clr-bg-alt: light-dark(oklch(18% 0.01 260), oklch(99% 0.005 260));
+  --clr-bg-header: light-dark(oklch(94% 0.01 260), oklch(28% 0.01 260));
+  --clr-bg-button: light-dark(
+    oklch(78% 0.025 250),
+    oklch(49.158% 0.0183 248.274)
+  );
+  --clr-bg-card: oklch(24% 0.01 260);
+  --clr-border: light-dark(oklch(90% 0.01 260), oklch(35% 0.01 260));
+  --clr-text-main: light-dark(oklch(20% 0.01 260), oklch(98% 0.005 260));
+  --clr-brand-primary: oklch(60% 0.16 250);
+  --clr-brand-secondary: oklch(75% 0.14 190);
+
+  --ff-title: "Sansation";
+  --ff-text: "Inter";
+
+  --space-xs: 0.25rem;
+  --space-s: 0.5rem;
+  --space-m: 1rem;
+  --space-l: 1.5rem;
+  --space-xl: 2rem;
+  --space-xxl: 3rem;
+
+  --fs-s: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.2rem;
+  --fs-lg: clamp(1.25rem, 2vw, 1.75rem);
+  --fs-xl: clamp(1.5rem, 3vw, 2.5rem);
+  --fs-hero: clamp(2rem, 5vw, 4rem);
+
+  --button-min-width: 8rem;
+}
+
+$bp-tablet: 768px;
+
+$transition-default: 0.3s ease;

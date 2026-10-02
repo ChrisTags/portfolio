@@ -1,0 +1,7 @@
+.checkbox__text {
+  color: var(--clr-brand-primary);
+  cursor: pointer;
+  &:hover {
+    color: var(--clr-brand-secondary);
+  }
+}
