@@ -17,6 +17,8 @@ export default function Card({ data, repoType }: CardProps) {
         <img
           src={`https://christags.github.io/${data.name}/preview.jpg`}
           alt=""
+          width={320}
+          height={180}
           loading="lazy"
         />
         <header className={styles.card__header}>

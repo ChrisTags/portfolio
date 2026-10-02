@@ -5,6 +5,7 @@ import ItemsList from "../../components/ItemsList";
 import LoadingSpinner from "../../components/LoadingSpinner";
 import PageHeader from "../../components/PageHeader";
 import useDataRepos from "../../hooks/useDataRepos";
+import styles from "./Projects.module.scss";
 
 export default function Projects() {
   const [techsSelected, setTechsSelected] = useState<string[]>([]);
@@ -45,7 +46,7 @@ export default function Projects() {
         }
       />
       <TechFilterForm onTechChange={handleTechChange} />
-      <ItemsList>
+      <ItemsList className={styles.projectsItemsList}>
         {error ? (
           <li>Erreur de chargement des repos...</li>
         ) : loading ? (
